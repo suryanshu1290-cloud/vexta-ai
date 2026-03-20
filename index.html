@@ -1070,25 +1070,27 @@
     </div>
 
     <script>
-        const webhookUrl = 'https://increased-entitled-population-michel.trycloudflare.com/chat';
+        // === YOUR CLOUDFLARE TUNNEL URL ===
+        const webhookUrl = 'https://app-attorneys-mood-communications.trycloudflare.com/chat';
         
-        // === THE SECRET SAUCE – NO "STUDY" MENTIONS ANYWHERE ===
+        // === LANGUAGE PROMPTS - NATURAL RESPONSES, NO LENGTH INSTRUCTIONS ===
         const languagePrompts = {
-            de: "Antworte ausführlich und hilfreich. Gib Beispiele und erkläre Konzepte gründlich.",
-            en: "Answer thoroughly and helpfully. Provide examples and explain concepts in detail.",
-            es: "Responde detalladamente y de manera útil. Proporciona ejemplos y explica conceptos a fondo.",
-            fr: "Répondez de manière approfondie et utile. Donnez des exemples et expliquez les concepts en détail.",
-            hi: "विस्तृत और सहायक उत्तर दें। उदाहरण दें और अवधारणाओं को विस्तार से समझाएं।",
-            it: "Rispondi in modo approfondito e utile. Fornisci esempi e spiega i concetti in dettaglio.",
-            ja: "詳細かつ役立つ回答をしてください。例を挙げ、概念を詳しく説明してください。",
-            zh: "详细且有用的回答。提供例子并详细解释概念。",
-            vi: "Trả lời chi tiết và hữu ích. Cung cấp ví dụ và giải thích khái niệm một cách chi tiết.",
-            id: "Jawab secara menyeluruh dan membantu. Berikan contoh dan jelaskan konsep secara rinci.",
-            tl: "Sagutin nang detalyado at kapaki-pakinabang. Magbigay ng mga halimbawa at ipaliwanag nang detalyado ang mga konsepto.",
-            ne: "विस्तृत र सहयोगी जवाफ दिनुहोस्। उदाहरण दिनुहोस् र अवधारणाहरू विस्तारमा व्याख्या गर्नुहोस्।",
-            apd: "أجب بشكل شامل ومفيد. قدم أمثلة واشرح المفاهيم بالتفصيل."
+            de: "Antworte hilfreich und natürlich.",
+            en: "Answer helpfully and naturally.",
+            es: "Responde de manera útil y natural.",
+            fr: "Répondez de manière utile et naturelle.",
+            hi: "सहायक और स्वाभाविक रूप से उत्तर दें।",
+            it: "Rispondi in modo utile e naturale.",
+            ja: "役立つ自然な回答をお願いします。",
+            zh: "提供有帮助且自然的回答。",
+            vi: "Trả lời hữu ích và tự nhiên.",
+            id: "Jawab dengan membantu dan alami.",
+            tl: "Sagutin nang kapaki-pakinabang at natural.",
+            ne: "सहयोगी र प्राकृतिक रूपमा जवाफ दिनुहोस्।",
+            apd: "أجب بشكل مفيد وطبيعي."
         };
         
+        // === STATE ===
         let sessionId = localStorage.getItem('vextaSessionId') || 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
         localStorage.setItem('vextaSessionId', sessionId);
         
@@ -1101,16 +1103,20 @@
         let chatsExpanded = localStorage.getItem('chatsExpanded') !== 'false';
         let currentLanguage = localStorage.getItem('vextaLanguage') || 'en';
         
+        // File upload state
         let selectedFile = null;
         
+        // User state
         let currentUser = JSON.parse(localStorage.getItem('vextaUser') || 'null');
         let isGuest = localStorage.getItem('isGuest') === 'true';
         
+        // Load dark mode preference
         const darkMode = localStorage.getItem('darkMode') === 'true';
         if (darkMode) {
             document.body.classList.add('dark-mode');
         }
         
+        // Load chats based on user
         let chats = [];
         if (currentUser) {
             chats = JSON.parse(localStorage.getItem(`vextaChats_${currentUser.email}`) || '[]');
@@ -1118,6 +1124,7 @@
             chats = JSON.parse(localStorage.getItem('vextaChats_guest') || '[]');
         }
 
+        // DOM elements
         const messagesDiv = document.getElementById('messages');
         const userInput = document.getElementById('userInput');
         const voiceIcon = document.getElementById('voiceIcon');
@@ -1135,10 +1142,12 @@
         const signUpModal = document.getElementById('signUpModal');
         const userSection = document.getElementById('userSection');
         
+        // File upload elements
         const fileInput = document.getElementById('fileInput');
         const fileName = document.getElementById('fileName');
         const clearFileBtn = document.getElementById('clearFileBtn');
 
+        // Set initial language
         languageSelect.value = currentLanguage;
         languageSelect.addEventListener('change', (e) => {
             currentLanguage = e.target.value;
@@ -1147,6 +1156,7 @@
 
         voiceIcon.textContent = voiceEnabled ? '🔊' : '🔇';
 
+        // If not logged in and not guest, show welcome message in sidebar
         if (!currentUser && !isGuest) {
             userSection.innerHTML = `
                 <div style="text-align: center; padding: 8px;">
@@ -1165,6 +1175,7 @@
             }
         }
 
+        // === FILE UPLOAD HANDLING ===
         fileInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -1663,7 +1674,8 @@
             closeDeleteModal();
         }
 
-        function typeText(element, text, speed = 20) {
+        // === FASTER TYPING ANIMATION - 10ms instead of 20ms ===
+        function typeText(element, text, speed = 10) {
             return new Promise((resolve) => {
                 let i = 0;
                 element.textContent = '';
