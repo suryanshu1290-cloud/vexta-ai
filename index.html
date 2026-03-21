@@ -37,90 +37,36 @@
             border-right-color: #2d2d2d;
         }
 
-        .user-section {
-            padding: 16px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .dark-mode .user-section {
-            border-bottom-color: #2d2d2d;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #0891b2, #0e7490);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .user-details {
-            flex: 1;
-        }
-
-        .user-name {
+        .new-chat-btn {
+            margin: 16px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 40px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             color: #1f2937;
-        }
-
-        .dark-mode .user-name {
-            color: #f3f4f6;
-        }
-
-        .user-email {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .dark-mode .user-email {
-            color: #9ca3af;
-        }
-
-        .premium-badge {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: #1f2937;
-            font-size: 10px;
-            font-weight: 600;
-            padding: 2px 6px;
-            border-radius: 30px;
-            margin-left: 6px;
-        }
-
-        .dark-mode .premium-badge {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: #ffffff;
-        }
-
-        .logout-btn {
-            background: none;
-            border: none;
-            font-size: 16px;
             cursor: pointer;
-            padding: 6px;
-            border-radius: 6px;
-            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             transition: all 0.2s;
         }
 
-        .logout-btn:hover {
+        .new-chat-btn:hover {
             background: #f3f4f6;
-            color: #dc2626;
+            border-color: #d1d5db;
         }
 
-        .dark-mode .logout-btn:hover {
+        .dark-mode .new-chat-btn {
+            background: #2d2d2d;
+            border-color: #404040;
+            color: #e5e7eb;
+        }
+
+        .dark-mode .new-chat-btn:hover {
             background: #333333;
+            border-color: #4b5563;
         }
 
         /* Usage counter */
@@ -191,39 +137,6 @@
             color: #ffffff;
         }
 
-        .new-chat-btn {
-            margin: 16px;
-            padding: 12px 16px;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 40px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #1f2937;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .new-chat-btn:hover {
-            background: #f3f4f6;
-            border-color: #d1d5db;
-        }
-
-        .dark-mode .new-chat-btn {
-            background: #2d2d2d;
-            border-color: #404040;
-            color: #e5e7eb;
-        }
-
-        .dark-mode .new-chat-btn:hover {
-            background: #333333;
-            border-color: #4b5563;
-        }
-
-        /* Search bar */
         .search-section {
             padding: 8px 16px;
             margin-bottom: 8px;
@@ -238,7 +151,6 @@
             background: white;
             color: #1f2937;
             outline: none;
-            transition: all 0.2s;
         }
 
         .search-input:focus {
@@ -252,7 +164,6 @@
             color: #e5e7eb;
         }
 
-        /* Feature tabs */
         .feature-tabs {
             display: flex;
             gap: 8px;
@@ -315,7 +226,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.2s;
         }
 
         .chats-header:hover {
@@ -355,7 +265,6 @@
             font-weight: 600;
             color: #9ca3af;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .dark-mode .history-date {
@@ -374,7 +283,6 @@
             padding: 8px 12px;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
         .history-item-content:hover {
@@ -415,7 +323,6 @@
             border-radius: 6px;
             opacity: 0.5;
             color: #6b7280;
-            transition: all 0.2s;
         }
 
         .menu-btn:hover {
@@ -459,7 +366,6 @@
             font-size: 14px;
             color: #374151;
             cursor: pointer;
-            transition: background 0.2s;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -489,12 +395,78 @@
             color: #f59e0b;
         }
 
+        .user-section {
+            padding: 16px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dark-mode .user-section {
+            border-top-color: #2d2d2d;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #0891b2, #0e7490);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .dark-mode .user-name {
+            color: #f3f4f6;
+        }
+
+        .user-email {
+            font-size: 11px;
+            color: #6b7280;
+        }
+
+        .dark-mode .user-email {
+            color: #9ca3af;
+        }
+
+        .logout-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 6px;
+            color: #6b7280;
+        }
+
+        .logout-btn:hover {
+            background: #f3f4f6;
+            color: #dc2626;
+        }
+
+        .dark-mode .logout-btn:hover {
+            background: #333333;
+        }
+
         #chat-container {
             flex: 1;
             display: flex;
             flex-direction: column;
             background: #ffffff;
-            transition: all 0.3s ease;
         }
 
         .dark-mode #chat-container {
@@ -508,7 +480,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            transition: all 0.3s ease;
         }
 
         .dark-mode .chat-header {
@@ -598,7 +569,6 @@
             font-size: 12px;
             color: #374151;
             cursor: pointer;
-            outline: none;
         }
 
         .dark-mode .language-select {
@@ -716,6 +686,12 @@
         .dark-mode .bot .message-content {
             background: #2d2d2d;
             color: #e5e7eb;
+        }
+
+        .message-content img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 8px;
         }
 
         .thinking-message {
@@ -922,7 +898,6 @@
 
         .modal-content .feature .check {
             color: #10b981;
-            font-weight: bold;
         }
 
         .modal-buttons {
@@ -993,35 +968,6 @@
 <body>
     <div id="toast" class="toast"></div>
 
-    <!-- Sign In Modal -->
-    <div id="signInModal" class="modal">
-        <div class="modal-content">
-            <h3>Welcome back! 👋</h3>
-            <p>Sign in to continue your conversations</p>
-            <input type="email" id="signInEmail" placeholder="Email">
-            <input type="password" id="signInPassword" placeholder="Password">
-            <div class="modal-buttons">
-                <button class="secondary" onclick="closeSignInModal()">Cancel</button>
-                <button class="primary" onclick="signIn()">Sign In</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sign Up Modal -->
-    <div id="signUpModal" class="modal">
-        <div class="modal-content">
-            <h3>Create account ✨</h3>
-            <p>Join Vexta AI today</p>
-            <input type="text" id="signUpName" placeholder="Full name">
-            <input type="email" id="signUpEmail" placeholder="Email">
-            <input type="password" id="signUpPassword" placeholder="Password">
-            <div class="modal-buttons">
-                <button class="secondary" onclick="closeSignUpModal()">Cancel</button>
-                <button class="primary" onclick="signUp()">Create Account</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Premium Modal -->
     <div id="premiumModal" class="modal">
         <div class="modal-content">
@@ -1029,15 +975,15 @@
             <div class="price">₹199 <span>/month</span></div>
             <div class="feature-list">
                 <div class="feature"><span class="check">✓</span> Unlimited messages</div>
+                <div class="feature"><span class="check">✓</span> Unlimited image generation</div>
+                <div class="feature"><span class="check">✓</span> Unlimited video generation</div>
                 <div class="feature"><span class="check">✓</span> All 13 languages</div>
-                <div class="feature"><span class="check">✓</span> File upload support</div>
-                <div class="feature"><span class="check">✓</span> Priority response speed</div>
-                <div class="feature"><span class="check">✓</span> Export chats as PDF/TXT</div>
-                <div class="feature"><span class="check">✓</span> Premium support</div>
-                <div class="feature"><span class="check">✓</span> No daily limits</div>
+                <div class="feature"><span class="check">✓</span> Priority speed</div>
+                <div class="feature"><span class="check">✓</span> Export chats</div>
+                <div class="feature"><span class="check">✓</span> Early access features</div>
             </div>
             <div class="modal-buttons">
-                <button onclick="upgradeToPremium()">✨ Upgrade Now</button>
+                <button onclick="upgradeComingSoon()">✨ Upgrade Now</button>
                 <button onclick="closePremiumModal()">Maybe Later</button>
             </div>
         </div>
@@ -1049,7 +995,6 @@
             <span>+</span> New chat
         </button>
         
-        <!-- Premium usage counter -->
         <div class="usage-counter" id="usageCounter">
             <div class="usage-header">
                 <span>📊 Daily Usage</span>
@@ -1058,21 +1003,27 @@
             <div class="usage-bar">
                 <div class="usage-progress" id="usageProgress" style="width: 0%"></div>
             </div>
-            <button class="upgrade-btn" onclick="showPremiumModal()">
-                ⭐ Upgrade to Premium
+            <div class="usage-header" style="margin-top: 4px;">
+                <span>🖼️ Images</span>
+                <span id="imageCount">0/5</span>
+            </div>
+            <div class="usage-header">
+                <span>🎬 Videos</span>
+                <span id="videoCount">0/3</span>
+            </div>
+            <button class="upgrade-btn" id="upgradeBtn" onclick="showPremiumModal()">
+                ⭐ Upgrade to Vexta Premium 🚀
             </button>
         </div>
 
-        <!-- Search bar -->
         <div class="search-section">
             <input type="text" class="search-input" id="searchChats" placeholder="Search chats..." onkeyup="searchChats()">
         </div>
 
-        <!-- Feature tabs -->
         <div class="feature-tabs">
             <div class="tab active" onclick="switchTab('chat')">💬 Chat</div>
-            <div class="tab" onclick="switchTab('voice')">🎤 Voice</div>
-            <div class="tab" onclick="switchTab('files')">📎 Files</div>
+            <div class="tab" onclick="switchTab('image')">🎨 Create Image</div>
+            <div class="tab" onclick="switchTab('video')">🎬 Create Video</div>
         </div>
 
         <div class="chats-section">
@@ -1083,16 +1034,13 @@
             <div class="chat-history" id="chatHistory"></div>
         </div>
 
-        <!-- User profile -->
-        <div class="user-section" id="userSection">
+        <div class="user-section">
+            <div class="user-avatar" id="userAvatar">👤</div>
             <div class="user-info">
-                <div class="user-avatar" id="userAvatar">👤</div>
-                <div class="user-details">
-                    <div class="user-name" id="userName">Guest User</div>
-                    <div class="user-email" id="userEmail">Temporary account</div>
-                </div>
-                <button class="logout-btn" onclick="logout()" title="Sign out">🚪</button>
+                <div class="user-name" id="userName">Guest User</div>
+                <div class="user-email" id="userEmail">Temporary account</div>
             </div>
+            <button class="logout-btn" onclick="logout()" title="Sign out">🚪</button>
         </div>
     </div>
 
@@ -1106,7 +1054,7 @@
                 <span class="logo-text">Vexta-AI</span>
             </div>
             <div class="header-text">
-                <h2>Vexta AI <span id="tierBadge" class="premium-badge">FREE</span></h2>
+                <h2>Vexta AI</h2>
                 <p>Your intelligent assistant</p>
             </div>
             <div class="header-controls">
@@ -1147,7 +1095,7 @@
             </div>
             
             <div class="message-input-area">
-                <input type="text" id="userInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <input type="text" id="userInput" placeholder="Type your message... (Try /image [prompt] or /video [prompt])" onkeypress="if(event.key==='Enter') sendMessage()">
                 <button id="stopBtn" onclick="stopResponse()">🛑 Stop</button>
                 <button onclick="sendMessage()">Send</button>
             </div>
@@ -1180,7 +1128,7 @@
 
     <script>
         // === YOUR CLOUDFLARE TUNNEL URL ===
-        const webhookUrl = 'https://annotated-swaziland-ext-smart.trycloudflare.com/chat';
+        const webhookUrl = 'https://salmon-starts-buyer-nonprofit.trycloudflare.com/chat';
         
         // === LANGUAGE PROMPTS ===
         const languagePrompts = {
@@ -1199,26 +1147,12 @@
             apd: "أجب بشكل مفيد وطبيعي."
         };
         
-        // === PREMIUM STATE ===
-        let isPremium = localStorage.getItem('isPremium') === 'true';
-        const FREE_MESSAGE_LIMIT = 50;
-        let messagesToday = parseInt(localStorage.getItem('messagesToday') || '0');
-        let lastMessageDate = localStorage.getItem('lastMessageDate') || new Date().toDateString();
-        
-        // Reset counter if new day
-        const today = new Date().toDateString();
-        if (lastMessageDate !== today) {
-            messagesToday = 0;
-            localStorage.setItem('messagesToday', '0');
-            localStorage.setItem('lastMessageDate', today);
-        }
-        
+        // === STATE ===
         let sessionId = localStorage.getItem('vextaSessionId') || 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
         localStorage.setItem('vextaSessionId', sessionId);
         
         let voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         let isResponding = false;
-        let typingInterval = null;
         let currentChatId = null;
         let chatToRename = null;
         let chatToDelete = null;
@@ -1253,46 +1187,78 @@
         const toast = document.getElementById('toast');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         const darkModeToggle = document.getElementById('darkModeToggle');
-        const signInModal = document.getElementById('signInModal');
-        const signUpModal = document.getElementById('signUpModal');
         const userAvatar = document.getElementById('userAvatar');
         const userName = document.getElementById('userName');
         const userEmail = document.getElementById('userEmail');
-        const tierBadge = document.getElementById('tierBadge');
-        const messageCount = document.getElementById('messageCount');
-        const usageProgress = document.getElementById('usageProgress');
+        const imageCount = document.getElementById('imageCount');
+        const videoCount = document.getElementById('videoCount');
         const fileInput = document.getElementById('fileInput');
         const fileName = document.getElementById('fileName');
         const clearFileBtn = document.getElementById('clearFileBtn');
+        const upgradeBtn = document.getElementById('upgradeBtn');
 
-        // Update UI for premium tier
-        function updateUIForTier() {
-            tierBadge.textContent = isPremium ? 'PREMIUM' : 'FREE';
-            tierBadge.style.background = isPremium ? 
-                'linear-gradient(135deg, #fbbf24, #f59e0b)' : 
-                'linear-gradient(135deg, #9ca3af, #6b7280)';
-            
-            if (!isPremium) {
-                const remaining = Math.max(0, FREE_MESSAGE_LIMIT - messagesToday);
-                messageCount.textContent = `${messagesToday}/${FREE_MESSAGE_LIMIT}`;
-                usageProgress.style.width = `${(messagesToday / FREE_MESSAGE_LIMIT) * 100}%`;
-            } else {
-                messageCount.textContent = 'Unlimited';
-                usageProgress.style.width = '100%';
-                usageProgress.style.background = 'linear-gradient(135deg, #fbbf24, #f59e0b)';
+        languageSelect.value = currentLanguage;
+        languageSelect.addEventListener('change', (e) => {
+            currentLanguage = e.target.value;
+            localStorage.setItem('vextaLanguage', currentLanguage);
+        });
+
+        voiceIcon.textContent = voiceEnabled ? '🔊' : '🔇';
+
+        if (!currentUser && !isGuest) {
+            userAvatar.textContent = '👤';
+            userName.textContent = 'Guest User';
+            userEmail.textContent = 'Temporary account';
+        } else if (currentUser) {
+            userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
+            userName.textContent = currentUser.name;
+            userEmail.textContent = currentUser.email;
+        }
+
+        if (chats.length === 0) {
+            createNewChat();
+        } else {
+            renderChatHistory();
+            loadChat(chats[0].id);
+        }
+
+        // === USAGE UPDATE ===
+        async function updateUsageDisplay() {
+            try {
+                const response = await fetch(`${webhookUrl}/usage/${sessionId}`);
+                const usage = await response.json();
+                
+                if (usage.images_limit === -1) {
+                    imageCount.textContent = 'Unlimited';
+                } else {
+                    imageCount.textContent = `${usage.images_used}/${usage.images_limit}`;
+                }
+                
+                if (usage.videos_limit === -1) {
+                    videoCount.textContent = 'Unlimited';
+                } else {
+                    videoCount.textContent = `${usage.videos_used}/${usage.videos_limit}`;
+                }
+                
+                const totalUsed = usage.images_used + usage.videos_used;
+                const totalLimit = (usage.images_limit === -1 ? 100 : usage.images_limit) + (usage.videos_limit === -1 ? 100 : usage.videos_limit);
+                const percent = Math.min((totalUsed / totalLimit) * 100, 100);
+                document.getElementById('usageProgress').style.width = `${percent}%`;
+                
+                if (usage.images_used >= usage.images_limit && usage.images_limit !== -1) {
+                    upgradeBtn.style.display = 'flex';
+                }
+                if (usage.videos_used >= usage.videos_limit && usage.videos_limit !== -1) {
+                    upgradeBtn.style.display = 'flex';
+                }
+            } catch (e) {
+                console.log('Usage update failed');
             }
         }
 
-        function canSendMessage() {
-            return isPremium || messagesToday < FREE_MESSAGE_LIMIT;
-        }
-
-        function incrementMessageCount() {
-            if (!isPremium) {
-                messagesToday++;
-                localStorage.setItem('messagesToday', messagesToday.toString());
-                updateUIForTier();
-            }
+        function upgradeComingSoon() {
+            closePremiumModal();
+            showToast('🚀 Premium coming soon! Stay tuned.');
         }
 
         function showPremiumModal() {
@@ -1303,45 +1269,6 @@
             premiumModal.classList.remove('show');
         }
 
-        function upgradeToPremium() {
-            isPremium = true;
-            localStorage.setItem('isPremium', 'true');
-            updateUIForTier();
-            closePremiumModal();
-            showToast('✨ You are now a Premium user!');
-        }
-
-        languageSelect.value = currentLanguage;
-        languageSelect.addEventListener('change', (e) => {
-            currentLanguage = e.target.value;
-            localStorage.setItem('vextaLanguage', currentLanguage);
-        });
-
-        voiceIcon.textContent = voiceEnabled ? '🔊' : '🔇';
-        updateUIForTier();
-
-        if (!currentUser && !isGuest) {
-            userAvatar.textContent = '👤';
-            userName.textContent = 'Guest User';
-            userEmail.textContent = 'Temporary account';
-        } else if (currentUser) {
-            userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
-            userName.textContent = currentUser.name;
-            userEmail.textContent = currentUser.email;
-        } else {
-            userAvatar.textContent = '👤';
-            userName.textContent = 'Guest User';
-            userEmail.textContent = 'Temporary account';
-        }
-
-        if (chats.length === 0) {
-            createNewChat();
-        } else {
-            renderChatHistory();
-            loadChat(chats[0].id);
-        }
-
-        // === SEARCH FUNCTION ===
         function searchChats() {
             const searchTerm = document.getElementById('searchChats').value.toLowerCase();
             const allChats = document.querySelectorAll('.history-item-wrapper');
@@ -1355,49 +1282,28 @@
             });
         }
 
-        // === TAB SWITCHING ===
         function switchTab(tab) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             if (tab === 'chat') document.querySelector('.tab:nth-child(1)').classList.add('active');
-            else if (tab === 'voice') document.querySelector('.tab:nth-child(2)').classList.add('active');
-            else if (tab === 'files') document.querySelector('.tab:nth-child(3)').classList.add('active');
+            else if (tab === 'image') document.querySelector('.tab:nth-child(2)').classList.add('active');
+            else if (tab === 'video') document.querySelector('.tab:nth-child(3)').classList.add('active');
             
-            if (tab === 'voice') {
-                startVoiceInput();
-            } else if (tab === 'files') {
-                document.getElementById('fileInput').click();
+            if (tab === 'image') {
+                userInput.placeholder = 'Describe the image you want... (e.g., "a futuristic city at sunset")';
+                userInput.value = '/image ';
+                userInput.focus();
+            } else if (tab === 'video') {
+                userInput.placeholder = 'Describe the video you want... (e.g., "a cat playing piano")';
+                userInput.value = '/video ';
+                userInput.focus();
+            } else {
+                userInput.placeholder = 'Type your message... (Try /image [prompt] or /video [prompt])';
+                userInput.value = '';
+                userInput.focus();
             }
-        }
-
-        // === VOICE INPUT ===
-        let recognition = null;
-        if ('webkitSpeechRecognition' in window) {
-            recognition = new webkitSpeechRecognition();
-            recognition.continuous = false;
-            recognition.interimResults = false;
-            recognition.lang = 'en-US';
-        }
-
-        function startVoiceInput() {
-            if (!recognition) {
-                showToast('Voice input not supported in your browser');
-                return;
-            }
-            showToast('🎤 Listening...');
-            recognition.start();
-            recognition.onresult = (event) => {
-                const transcript = event.results[0][0].transcript;
-                userInput.value = transcript;
-                sendMessage();
-            };
-            recognition.onerror = () => showToast('Voice input error');
         }
 
         fileInput.addEventListener('change', function(e) {
-            if (!isPremium) {
-                showPremiumModal();
-                return;
-            }
             const file = e.target.files[0];
             if (file) {
                 selectedFile = file;
@@ -1434,55 +1340,6 @@
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 2000);
-        }
-
-        function showSignInModal() { signInModal.classList.add('show'); }
-        function closeSignInModal() { signInModal.classList.remove('show'); }
-        function showSignUpModal() { signUpModal.classList.add('show'); }
-        function closeSignUpModal() { signUpModal.classList.remove('show'); }
-
-        function signIn() {
-            const email = document.getElementById('signInEmail').value;
-            const password = document.getElementById('signInPassword').value;
-            if (!email || !password) { showToast('Please fill in all fields'); return; }
-            const users = JSON.parse(localStorage.getItem('vextaUsers') || '[]');
-            const user = users.find(u => u.email === email && u.password === password);
-            if (user) {
-                currentUser = user; isGuest = false;
-                localStorage.setItem('vextaUser', JSON.stringify(user));
-                localStorage.removeItem('isGuest');
-                chats = JSON.parse(localStorage.getItem(`vextaChats_${user.email}`) || '[]');
-                closeSignInModal();
-                userAvatar.textContent = user.name.charAt(0).toUpperCase();
-                userName.textContent = user.name;
-                userEmail.textContent = user.email;
-                showToast(`Welcome back, ${user.name}!`);
-                if (chats.length === 0) createNewChat();
-                else { renderChatHistory(); loadChat(chats[0].id); }
-            } else { showToast('Invalid email or password'); }
-        }
-
-        function signUp() {
-            const name = document.getElementById('signUpName').value;
-            const email = document.getElementById('signUpEmail').value;
-            const password = document.getElementById('signUpPassword').value;
-            if (!name || !email || !password) { showToast('Please fill in all fields'); return; }
-            const users = JSON.parse(localStorage.getItem('vextaUsers') || '[]');
-            if (users.some(u => u.email === email)) { showToast('Email already exists'); return; }
-            const newUser = { name, email, password };
-            users.push(newUser);
-            localStorage.setItem('vextaUsers', JSON.stringify(users));
-            currentUser = newUser; isGuest = false;
-            localStorage.setItem('vextaUser', JSON.stringify(newUser));
-            localStorage.removeItem('isGuest');
-            chats = [];
-            localStorage.setItem(`vextaChats_${email}`, '[]');
-            closeSignUpModal();
-            userAvatar.textContent = name.charAt(0).toUpperCase();
-            userName.textContent = name;
-            userEmail.textContent = email;
-            showToast(`Welcome, ${name}!`);
-            createNewChat();
         }
 
         function continueAsGuest() {
@@ -1790,17 +1647,8 @@
             const message = userInput.value.trim();
             if (!message && !selectedFile) return;
             
-            if (!canSendMessage()) {
-                showPremiumModal();
-                return;
-            }
-            
             let finalMessage = message;
             if (selectedFile) {
-                if (!isPremium) {
-                    showPremiumModal();
-                    return;
-                }
                 try {
                     showToast(`Processing ${selectedFile.name}...`);
                     const fileContent = await readFileContent(selectedFile);
@@ -1812,12 +1660,12 @@
             
             userInput.value = '';
             await addMessage(finalMessage, true);
-            incrementMessageCount();
             
             if (currentChatId) {
                 const chat = chats.find(c => c.id === currentChatId);
                 if (chat) { chat.messages.push({ role: 'user', content: finalMessage }); saveChats(); }
             }
+            
             showThinking();
             showTypingIndicator();
             stopBtn.classList.add('visible');
@@ -1832,6 +1680,18 @@
                 });
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
+                
+                // Check if limit reached
+                if (data.limit_reached) {
+                    hideTypingIndicator();
+                    hideThinking();
+                    addMessage(data.response, false);
+                    upgradeBtn.style.display = 'flex';
+                    stopBtn.classList.remove('visible');
+                    isResponding = false;
+                    return;
+                }
+                
                 let reply = data.response || data.message || data.text || 'I received your message.';
                 reply = reply.replace(/\[Instruction:.*?\]/g, '').trim();
                 hideTypingIndicator();
@@ -1850,6 +1710,7 @@
                         }
                     }
                 }
+                await updateUsageDisplay();
             } catch (err) {
                 hideTypingIndicator();
                 hideThinking();
@@ -1869,11 +1730,12 @@
             }
         }
 
+        // Initial usage update
+        updateUsageDisplay();
+
         window.onclick = (e) => {
             if (e.target === renameModal) closeRenameModal();
             if (e.target === deleteModal) closeDeleteModal();
-            if (e.target === signInModal) closeSignInModal();
-            if (e.target === signUpModal) closeSignUpModal();
             if (e.target === premiumModal) closePremiumModal();
         };
     </script>
